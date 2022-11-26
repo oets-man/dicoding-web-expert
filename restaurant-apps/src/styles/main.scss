@@ -18,7 +18,8 @@ $light3: #acb992;
 body {
 	max-width: 1200px;
 	margin: 0 auto;
-	background-color: azure;
+	background-image: url('../public/images/pattern.webp');
+	color: $dark1;
 }
 
 // header -> section -> sticky
@@ -110,13 +111,14 @@ body {
 
 // header -> section -> hero
 .hero {
+	background-color: azure;
+	padding-bottom: 10px;
 	display: flex;
 	position: relative;
 	width: 100%;
-	height: 40vh;
+	height: 30vh;
 	justify-content: center;
 	align-items: center;
-
 	img {
 		display: block;
 		position: relative;
@@ -128,26 +130,52 @@ body {
 	.hero-content {
 		width: 100%;
 		padding: 5px;
-		background-color: rgba(172, 185, 146, 0.4);
+		background-color: rgba(172, 185, 146, 0.7);
 		position: absolute;
 		margin: auto;
-		color: $light1;
 		text-align: center;
-		text-shadow: 2px 2px 1px $dark1;
 		.hero-title {
+			color: $light1;
+			text-shadow: 2px 2px 1px $dark1;
 			font-size: 2rem;
 			font-weight: 500;
 		}
 		.hero-subtitle {
+			color: $dark1;
 			font-size: 1.2rem;
 			font-weight: 300;
 			margin-top: 0.2rem;
+			span {
+				display: block;
+				font-variant: small-caps;
+				font-weight: 400;
+			}
 		}
 	}
 }
 main {
-	height: 1000px;
+	background-color: azure;
+	h1 {
+		padding: 10px 5px;
+		border-bottom: 1px $dark2 solid;
+		border-top: 1px $dark2 solid;
+		text-align: center;
+		font-weight: 300;
+		font-size: 1.5em;
+		margin-bottom: 10px;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		my-card {
+			justify-self: center;
+			text-align: center;
+		}
+	}
 }
+
 footer {
 	background-color: $light2;
 	text-align: center;

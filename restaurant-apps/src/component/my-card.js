@@ -9,39 +9,33 @@ class MyCard extends HTMLElement {
 		this.render();
 	}
 	render() {
-		const { html_url, login, avatar_url, name, bio, email, location, followers, following, public_repos } = this._item;
+		const { id, name, description, picture, city, rating } = this._item;
 		this.shadow.innerHTML = `
       <style>${css}</style>
       <div class="item">
-        <img src="${avatar_url}" alt="user avatar"/>
+        <img src="${picture}" alt="user avatar"/>
         <table>
           <tr>
-            <td>login:</td>
-            <td><a target="_blank" href="${html_url}">${login}</a></td>
-          </tr>
-          <tr>
             <td>nama:</td>
-            <td>${name ? name : '-'}</td>
-          </tr>
-            <td>email:</td>
-            <td>${email ? email : '-'}</td>
+            <td>${name}</td>
           </tr>
           <tr>
-            <td>lokasi:</td>
-            <td>${location ? location : '-'}</td>
+            <td>kota:</td>
+            <td>${city}</td>
           </tr>
-          <tr>
-            <td>Bio:</td>
-            <td>${bio ? bio : '-'}</td>
+            <td>rating:</td>
+            <td>${rating}</td>
           </tr>
         </table>
-        <p>
-          <span>pengikut: </span> ${followers ? followers : 0}; 
-          <span>mengikuti: </span> ${following ? following : 0}; 
-          <span>repo publik: </span>  ${public_repos ? public_repos : 0}
+        <p id="description" class="description">
+            ${description}
         </p>
       </div>
       `;
+		this.shadow.querySelector('.item').addEventListener('click', () => {
+			const description = this.shadow.querySelector('#description');
+			description.classList.toggle('open');
+		});
 	}
 }
 customElements.define('my-card', MyCard);
