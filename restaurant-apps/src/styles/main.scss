@@ -5,8 +5,8 @@ $laptop: 1024px;
 $dark1: #362706;
 $dark2: #464e2e;
 $light1: #e9e5d6;
-$light2: #acb992;
-$light3: #d7e0c3;
+$light2: #d7e0c3;
+$light3: #acb992;
 
 * {
 	margin: 0;
@@ -21,94 +21,94 @@ body {
 	background-color: azure;
 }
 
+// header -> section -> sticky
 .sticky {
 	position: sticky;
 	top: 0;
 	z-index: 1;
-}
-
-.header__inner {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	color: $dark1;
-	background-color: $light2;
-	height: 50px;
-	.header__menu {
-		font-size: 2em;
-		padding: 0 10px;
-	}
-	.header__title {
-		font-size: 1.7em;
-		font-weight: normal;
-	}
-	@media screen and (min-width: $tablet) {
-		& {
-			flex-direction: column;
+	.inner {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		color: $dark1;
+		background-color: $light2;
+		height: 50px;
+		.menu {
+			font-size: 2em;
+			padding: 0 10px;
 		}
-		.header__title {
-			line-height: 50px;
+		.title {
+			font-size: 1.7em;
+			font-weight: normal;
 		}
-		.header__menu {
-			display: none;
-		}
-	}
-}
-
-nav {
-	box-shadow: 6px 8px 5px rgba($color: #8a8585, $alpha: 0.4);
-	// z-index: 10;
-	background-color: $light1;
-	width: 200px;
-	position: absolute;
-	-webkit-transform: translate(-250px, 0);
-	transform: translate(-250px, 0);
-	transition: transform 0.3s ease;
-	ul {
-		display: grid;
-		li {
-			border-bottom: 1px solid $light2;
-			width: 100%;
-			text-align: left;
-			padding: 20px;
-			a {
-				color: $dark2;
-				cursor: pointer;
-				text-decoration: none;
+		@media screen and (min-width: $tablet) {
+			& {
+				flex-direction: column;
 			}
-			&:hover {
-				font-weight: bold;
-				background-color: $light3;
+			.title {
+				line-height: 50px;
+			}
+			.menu {
+				display: none;
 			}
 		}
 	}
-	&.open-nav {
-		-webkit-transform: translate(0, 0);
-		transform: translate(0, 0);
-	}
-	@media screen and (min-width: $tablet) {
-		position: static;
-		-webkit-transform: translate(0, 0);
-		transform: translate(0, 0);
-		box-shadow: none;
-		width: 100%;
-		margin: 0 auto;
+
+	nav {
+		box-shadow: 6px 8px 5px rgba($color: $dark2, $alpha: 0.4);
+		background-color: $light1;
+		width: 200px;
+		position: absolute;
+		-webkit-transform: translate(-250px, 0);
+		transform: translate(-250px, 0);
+		transition: transform 0.3s ease;
 		ul {
-			grid-template-columns: 1fr 1fr 1fr;
-			flex-direction: column;
-			justify-content: center;
-			max-width: 600px;
-			margin: auto;
+			display: grid;
 			li {
-				display: inline;
-				text-align: center;
-				border: 0;
-				padding: 10px;
+				border-bottom: 1px solid $light2;
+				width: 100%;
+				text-align: left;
+				padding: 20px;
+				a {
+					color: $dark2;
+					cursor: pointer;
+					text-decoration: none;
+				}
+				&:hover {
+					font-weight: bold;
+					background-color: $light3;
+				}
+			}
+		}
+		&.open-nav {
+			-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+		@media screen and (min-width: $tablet) {
+			position: static;
+			-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+			box-shadow: none;
+			width: 100%;
+			margin: 0 auto;
+			ul {
+				grid-template-columns: 1fr 1fr 1fr;
+				flex-direction: column;
+				justify-content: center;
+				max-width: 600px;
+				margin: auto;
+				li {
+					display: inline;
+					text-align: center;
+					border: 0;
+					padding: 10px;
+				}
 			}
 		}
 	}
 }
 
+// header -> section -> hero
 .hero {
 	display: flex;
 	position: relative;
@@ -126,22 +126,33 @@ nav {
 		object-position: center;
 	}
 	.hero-content {
+		width: 100%;
+		padding: 5px;
+		background-color: rgba(172, 185, 146, 0.4);
 		position: absolute;
 		margin: auto;
-		color: #fff;
+		color: $light1;
 		text-align: center;
-		text-shadow: 2px 2px 2px black;
+		text-shadow: 2px 2px 1px $dark1;
 		.hero-title {
-			padding: 0 20px;
-			margin: 0 auto;
 			font-size: 2rem;
 			font-weight: 500;
 		}
 		.hero-subtitle {
 			font-size: 1.2rem;
 			font-weight: 300;
-			margin-top: 0.5rem;
-			padding: 0 20px;
+			margin-top: 0.2rem;
 		}
 	}
+}
+main {
+	height: 1000px;
+}
+footer {
+	background-color: $light2;
+	text-align: center;
+	color: $dark2;
+	height: 30px;
+	line-height: 30px;
+	font-size: small;
 }
