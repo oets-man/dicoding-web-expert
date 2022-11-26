@@ -13,23 +13,24 @@ class MyCard extends HTMLElement {
 		this.shadow.innerHTML = `
       <style>${css}</style>
       <div class="item">
-        <img src="${picture}" alt="user avatar"/>
-        <table>
-          <tr>
-            <td>nama:</td>
-            <td>${name}</td>
-          </tr>
-          <tr>
-            <td>kota:</td>
-            <td>${city}</td>
-          </tr>
-            <td>rating:</td>
-            <td>${rating}</td>
-          </tr>
-        </table>
-        <p id="description" class="description">
-            ${description}
-        </p>
+        <div class="content">
+          <img src="${picture}" alt="gambar restoran"/>
+          <table>
+            <tr>
+              <td>nama:</td>
+              <td>${name}</td>
+            </tr>
+            <tr>
+              <td>kota:</td>
+              <td>${city}</td>
+            </tr>
+            <tr>
+              <td>rating:</td>
+              <td>${rating}</td>
+            </tr>
+          </table>
+        </div>
+        <p id="description" class="description">${description}</p>
       </div>
       `;
 		this.shadow.querySelector('.item').addEventListener('click', () => {

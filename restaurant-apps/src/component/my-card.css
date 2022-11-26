@@ -5,20 +5,19 @@
 }
 
 :host {
+	position: relative;
 	vertical-align: top;
 	margin: auto;
 	animation: fadeIn 3s;
 }
 
 .item {
-	text-align: left;
 	background-color: azure;
-	width: 300px;
+	width: 90%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	margin: 10px 10px;
+	margin: 10px auto;
 	padding: 10px;
-	display: inline-block;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
 	border-radius: 5px;
@@ -26,24 +25,30 @@
 
 .item:hover {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
+.content {
+	display: flex;
+	flex-direction: row;
+}
 img {
+	display: block;
 	width: 100px;
-	float: left;
+	height: 100px;
 	margin-right: 10px;
 	animation: fadeIn 3s;
+	object-fit: cover;
 }
-a:hover {
-	font-style: italic;
+table {
+	align-self: center;
 }
 tr > :first-child {
 	font-style: italic;
 	padding-right: 0.25em;
 }
 td {
-	line-height: 1.25em;
+	line-height: 1.5em;
 	text-align: left;
 	vertical-align: top;
 }
@@ -51,24 +56,11 @@ td {
 	display: none;
 }
 .open {
-	margin-top: 5px;
+	margin-top: 10px;
 	font-size: 0.9em;
 	display: block;
+	text-align: justify;
 }
-
-/* @media screen and (max-width: 600px) {
-	.item {
-		width: 500px;
-		overflow: auto;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.item {
-		width: 90%;
-		overflow: auto;
-	}
-} */
 
 @keyframes fadeIn {
 	0% {

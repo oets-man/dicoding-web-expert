@@ -162,7 +162,7 @@ main {
 		text-align: center;
 		font-weight: 300;
 		font-size: 1.5em;
-		margin-bottom: 10px;
+		margin-bottom: 5px;
 	}
 
 	.container {
@@ -172,6 +172,16 @@ main {
 		my-card {
 			justify-self: center;
 			text-align: center;
+			width: 100%;
+		}
+		@media screen and (min-width: $tablet) {
+			grid-template-columns: 1fr 1fr;
+			justify-content: space-evenly;
+			width: 95%;
+			margin: auto;
+		}
+		@media screen and (min-width: $laptop) {
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 }
