@@ -40,6 +40,7 @@ img {
 	animation: fadeIn 3s;
 	object-fit: cover;
 }
+
 table {
 	align-self: center;
 }
@@ -61,7 +62,25 @@ td {
 	display: block;
 	text-align: justify;
 }
-
+.btn {
+	display: flex;
+	flex-direction: row;
+	column-gap: 10px;
+	margin: 10px 0px;
+}
+button {
+	width: 100px;
+	height: 44px;
+	color: #362706;
+	background-color: #d7e0c3;
+	border-radius: 5px;
+	border: none;
+}
+button:hover,
+button:focus {
+	background-color: #e9e5d6;
+	font-weight: bold;
+}
 @keyframes fadeIn {
 	0% {
 		opacity: 0;

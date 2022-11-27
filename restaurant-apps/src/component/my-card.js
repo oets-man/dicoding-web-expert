@@ -12,7 +12,7 @@ class MyCard extends HTMLElement {
 		const { id, name, description, picture, city, rating } = this._item;
 		this.shadow.innerHTML = `
       <style>${css}</style>
-      <div class="item">
+      <div class="item" tabindex="0">
         <div class="content">
           <img src="${picture}" alt="gambar restoran"/>
           <table>
@@ -30,12 +30,21 @@ class MyCard extends HTMLElement {
             </tr>
           </table>
         </div>
-        <p id="description" class="description">${description}</p>
+        <div id="description" class="description">
+          <div class="btn">
+            <button id="btn-detail">Detail</button>
+            <button id="btn-favorite">Favorit</button>
+          </div>
+          <p>${description}</p>
+        </div>
       </div>
       `;
 		this.shadow.querySelector('.item').addEventListener('click', () => {
 			const description = this.shadow.querySelector('#description');
 			description.classList.toggle('open');
+		});
+		this.shadow.querySelector('button').addEventListener('click', () => {
+			alert('Maaf. Fitur masih dalam pengembangan!');
 		});
 	}
 }
