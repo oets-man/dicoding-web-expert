@@ -47,14 +47,13 @@ body {
 		background-color: $light2;
 		height: 50px;
 		.menu {
-			button {
-				padding: 0 10px;
-				font-size: 2em;
-				background-color: $light2;
-				border: 0;
-				height: 50px;
-				cursor: pointer;
-			}
+			padding: 0 10px;
+			font-size: 2em;
+			background-color: $light2;
+			border: 0;
+			height: 50px;
+			width: 50px;
+			cursor: pointer;
 			& :hover {
 				background-color: $light3;
 				color: $dark2;

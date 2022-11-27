@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { async } from 'regenerator-runtime';
 
 class DataSource {
 	static getRestaurant = async () => {
@@ -11,15 +10,14 @@ class DataSource {
 					count: response.count,
 					restaurants: response.restaurants,
 				};
-			} else {
-				return {
-					message: response.message,
-				};
 			}
+			return {
+				message: response.message,
+			};
 		} catch (error) {
 			return {
 				message: 'Cek koneksi internet Anda!',
-				error: error,
+				error,
 			};
 		}
 	};

@@ -80,6 +80,7 @@ button {
 	background-color: #d7e0c3;
 	border-radius: 5px;
 	border: none;
+	cursor: pointer;
 }
 button:hover,
 button:focus {

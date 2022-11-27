@@ -1,15 +1,18 @@
 import css from './my-card.css';
+
 class MyCard extends HTMLElement {
 	constructor() {
 		super();
 		this.shadow = this.attachShadow({ mode: 'open' });
 	}
+
 	set item(item) {
 		this._item = item;
 		this.render();
 	}
+
 	render() {
-		const { id, name, description, picture, city, rating } = this._item;
+		const { name, description, picture, city, rating } = this._item;
 		this.shadow.innerHTML = `
       <style>${css}</style>
       <div class="item" tabindex="0">
@@ -32,8 +35,8 @@ class MyCard extends HTMLElement {
         </div>
         <div id="description" class="description">
           <div class="btn">
-            <button id="btn-detail">Detail</button>
-            <button id="btn-favorite">Favorit</button>
+            <button id="btn-detail" aria-label="tampilkan detail restoran">Detail</button>
+            <button id="btn-favorite" aria-label="tambahkan ke favorit">Favorit</button>
           </div>
           <p>${description}</p>
         </div>
@@ -57,7 +60,7 @@ class MyCard extends HTMLElement {
 		});
 		this.shadow.querySelector('#btn-detail').addEventListener('keypress', (e) => {
 			e.stopPropagation();
-			if (e.key === 'Enter' || e.key === ' ') {
+			if (e.key === ' ') {
 				alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
 			}
 		});
@@ -69,7 +72,7 @@ class MyCard extends HTMLElement {
 		});
 		this.shadow.querySelector('#btn-favorite').addEventListener('keypress', (e) => {
 			e.stopPropagation();
-			if (e.key === 'Enter' || e.key === ' ') {
+			if (e.key === ' ') {
 				alert('Maaf. Fitur tambah ke favorit masih dalam pengembangan!');
 			}
 		});

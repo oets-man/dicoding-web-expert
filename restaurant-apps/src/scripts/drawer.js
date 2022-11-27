@@ -4,16 +4,16 @@ const drawer = () => {
 	const main = document.querySelector('main');
 	const drawer = document.querySelector('nav');
 
-	menu.addEventListener('click', function (event) {
+	menu.addEventListener('click', (e) => {
 		drawer.classList.toggle('open-nav');
-		event.stopPropagation();
+		e.stopPropagation();
 	});
 
-	hero.addEventListener('click', function () {
+	hero.addEventListener('click', () => {
 		drawer.classList.remove('open-nav');
 	});
 
-	main.addEventListener('click', function () {
+	main.addEventListener('click', () => {
 		drawer.classList.remove('open-nav');
 	});
 };
