@@ -47,8 +47,18 @@ body {
 		background-color: $light2;
 		height: 50px;
 		.menu {
-			font-size: 2em;
-			padding: 0 10px;
+			button {
+				padding: 0 10px;
+				font-size: 2em;
+				background-color: $light2;
+				border: 0;
+				height: 50px;
+				cursor: pointer;
+			}
+			& :hover {
+				background-color: $light3;
+				color: $dark2;
+			}
 		}
 		.title {
 			font-size: 1.7em;
@@ -81,7 +91,15 @@ body {
 				border-bottom: 1px solid $light2;
 				width: 100%;
 				text-align: left;
-				padding: 20px;
+				padding: 0 10px;
+				height: 70px;
+				line-height: 70px;
+
+				button {
+					color: $dark2;
+					text-decoration: none;
+					cursor: pointer;
+				}
 				a {
 					color: $dark2;
 					text-decoration: none;
@@ -113,8 +131,9 @@ body {
 				li {
 					display: inline;
 					text-align: center;
+					height: 44px;
+					line-height: 44px;
 					border: 0;
-					padding: 10px;
 				}
 			}
 		}

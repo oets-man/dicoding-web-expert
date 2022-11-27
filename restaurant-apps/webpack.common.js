@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -15,17 +14,6 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			// {
-			// 	test: /\.css$/,
-			// 	use: [
-			// 		{
-			// 			loader: 'style-loader',
-			// 		},
-			// 		{
-			// 			loader: 'css-loader',
-			// 		},
-			// 	],
-			// },
 			{
 				test: /\.s[ac]ss$/i,
 				exclude: /component/,
@@ -59,7 +47,6 @@ module.exports = {
 				},
 			],
 		}),
-		new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /id/),
 		new CleanWebpackPlugin(),
 	],
 };

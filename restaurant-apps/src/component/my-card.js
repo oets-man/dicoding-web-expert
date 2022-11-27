@@ -18,7 +18,7 @@ class MyCard extends HTMLElement {
           <table>
             <tr>
               <td>nama:</td>
-              <td>${name}</td>
+              <td class="item-name">${name}</td>
             </tr>
             <tr>
               <td>kota:</td>
@@ -39,17 +39,39 @@ class MyCard extends HTMLElement {
         </div>
       </div>
       `;
+		// card item
+		const elDescription = this.shadow.querySelector('#description');
 		this.shadow.querySelector('.item').addEventListener('click', () => {
-			const description = this.shadow.querySelector('#description');
-			description.classList.toggle('open');
+			elDescription.classList.toggle('open');
 		});
+		this.shadow.querySelector('.item').addEventListener('keypress', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				elDescription.classList.toggle('open');
+			}
+		});
+
+		// button detail
 		this.shadow.querySelector('#btn-detail').addEventListener('click', (e) => {
 			e.stopPropagation();
-			alert('Maaf. Fitur masih dalam pengembangan!');
+			alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
 		});
+		this.shadow.querySelector('#btn-detail').addEventListener('keypress', (e) => {
+			e.stopPropagation();
+			if (e.key === 'Enter' || e.key === ' ') {
+				alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
+			}
+		});
+
+		// button favorite
 		this.shadow.querySelector('#btn-favorite').addEventListener('click', (e) => {
 			e.stopPropagation();
-			alert('Maaf. Fitur masih dalam pengembangan!');
+			alert('Maaf. Fitur tambah ke favorit masih dalam pengembangan!');
+		});
+		this.shadow.querySelector('#btn-favorite').addEventListener('keypress', (e) => {
+			e.stopPropagation();
+			if (e.key === 'Enter' || e.key === ' ') {
+				alert('Maaf. Fitur tambah ke favorit masih dalam pengembangan!');
+			}
 		});
 	}
 }

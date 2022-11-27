@@ -53,6 +53,11 @@ td {
 	text-align: left;
 	vertical-align: top;
 }
+
+.item-name {
+	font-variant: small-caps;
+}
+
 .description {
 	display: none;
 }
