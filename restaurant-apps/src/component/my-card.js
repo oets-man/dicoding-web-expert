@@ -43,7 +43,12 @@ class MyCard extends HTMLElement {
 			const description = this.shadow.querySelector('#description');
 			description.classList.toggle('open');
 		});
-		this.shadow.querySelector('button').addEventListener('click', () => {
+		this.shadow.querySelector('#btn-detail').addEventListener('click', (e) => {
+			e.stopPropagation();
+			alert('Maaf. Fitur masih dalam pengembangan!');
+		});
+		this.shadow.querySelector('#btn-favorite').addEventListener('click', (e) => {
+			e.stopPropagation();
 			alert('Maaf. Fitur masih dalam pengembangan!');
 		});
 	}
