@@ -49,6 +49,7 @@ tr > :first-child {
 	padding-right: 0.25em;
 }
 td {
+	font-size: 1.2em;
 	line-height: 1.5em;
 	text-align: left;
 	vertical-align: top;
@@ -63,7 +64,6 @@ td {
 }
 .open {
 	margin-top: 10px;
-	font-size: 0.9em;
 	display: block;
 	text-align: justify;
 }
