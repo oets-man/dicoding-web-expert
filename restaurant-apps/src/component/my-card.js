@@ -12,10 +12,10 @@ class MyCard extends HTMLElement {
 	}
 
 	render() {
-		const { name, description, picture, city, rating } = this._item;
+		const { id, name, description, picture, city, rating } = this._item;
 		this.shadow.innerHTML = `
       <style>${css}</style>
-      <div class="item" tabindex="0">
+      <div class="item" tabindex="0" id="restaurantId-${id}">
         <div class="content">
           <img src="${picture}" alt="gambar restoran"/>
           <table>
