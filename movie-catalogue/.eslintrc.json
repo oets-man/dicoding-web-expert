@@ -18,6 +18,7 @@
         "no-restricted-globals":0,
         "linebreak-style":0,
         "no-tabs":0,
-        "indent": ["error", "tab"]
+        "indent": ["error", "tab"],
+        "code": 120
     }
 }
