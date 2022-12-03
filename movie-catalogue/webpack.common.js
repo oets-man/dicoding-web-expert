@@ -1,7 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const path = require('path');
 
@@ -31,7 +29,6 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -43,13 +40,6 @@ module.exports = {
 					to: path.resolve(__dirname, 'dist/'),
 				},
 			],
-		}),
-		// new WorkboxWebpackPlugin.InjectManifest({
-		// 	swSrc: './src/scripts/sw-xxx.js',
-		// 	swDest: './sw.bundle.js',
-		// }),
-		new WorkboxWebpackPlugin.GenerateSW({
-			swDest: './sw.bundle.js',
 		}),
 	],
 };
