@@ -44,6 +44,10 @@ module.exports = {
 				},
 			],
 		}),
+		// new WorkboxWebpackPlugin.InjectManifest({
+		// 	swSrc: './src/scripts/sw-xxx.js',
+		// 	swDest: './sw.bundle.js',
+		// }),
 		new WorkboxWebpackPlugin.GenerateSW({
 			swDest: './sw.bundle.js',
 		}),
