@@ -1,6 +1,6 @@
 import 'regenerator-runtime';
 
-import CacheHelper from './utils/cache-helper-xxx';
+import CacheHelper from './utils/cache-helper-native';
 // Daftar asset yang akan dicaching
 const assetsToCache = [
 	'./',
@@ -9,6 +9,7 @@ const assetsToCache = [
 	'./icons/maskable_icon_x72.png',
 	'./icons/maskable_icon_x96.png',
 	'./icons/maskable_icon_x128.png',
+	'./icons/maskable_icon_x144.png',
 	'./icons/maskable_icon_x192.png',
 	'./icons/maskable_icon_x384.png',
 	'./icons/maskable_icon_x512.png',

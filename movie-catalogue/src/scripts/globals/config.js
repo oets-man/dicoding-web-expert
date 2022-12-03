@@ -5,7 +5,7 @@ const CONFIG = {
 	DEFAULT_LANGUAGE: 'en-us',
 
 	// use Workbox do not need
-	// CACHE_NAME: 'MovieCatalogue-V1',
+	CACHE_NAME: 'MovieCatalogue-V1',
 	// on develop
 	// CACHE_NAME: new Date().toISOString(),
 
