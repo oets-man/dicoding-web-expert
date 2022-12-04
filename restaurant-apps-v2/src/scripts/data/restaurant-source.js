@@ -1,10 +1,12 @@
 import axios from 'axios';
+import API_ENDPOINT from '../globals/api-endpoint';
 
-class DataSource {
-	static getRestaurant = async () => {
+class RestaurantSource {
+	static getAll = async () => {
+		console.log(API_ENDPOINT.LIST);
 		try {
-			const axiosGet = await axios.get('https://restaurant-api.dicoding.dev/list');
-			const response = axiosGet.data;
+			const get = await axios.get(API_ENDPOINT.LIST);
+			const response = get.data;
 			if (!response.error) {
 				return {
 					count: response.count,
@@ -23,4 +25,4 @@ class DataSource {
 	};
 }
 
-export { DataSource };
+export default RestaurantSource;

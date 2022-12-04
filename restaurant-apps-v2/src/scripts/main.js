@@ -1,12 +1,12 @@
 import './views/components/my-card';
-import { DataSource } from './data/data-source';
+import RestaurantSource from './data/restaurant-source';
 
 const main = () => {
 	const cardContainer = document.querySelector('#card-container');
 	const urlPicture = 'https://restaurant-api.dicoding.dev/images/small';
 	const start = async () => {
 		try {
-			const results = await DataSource.getRestaurant();
+			const results = await RestaurantSource.getAll();
 			const { restaurants } = results;
 			for (const [index, restaurant] of restaurants.entries()) {
 				setTimeout(() => {
