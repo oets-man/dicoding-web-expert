@@ -8,10 +8,13 @@ const app = new App({
 	button: document.querySelector('#menu'),
 	drawer: document.querySelector('#drawer'),
 	hero: document.querySelector('#hero'),
-	main: document.querySelector('main'),
+	main: document.querySelector('#main-content'),
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-// 	DrawerInitiator.init({ button, drawer, hero, main });
-// 	// main();
-// });
+window.addEventListener('hashchange', () => {
+	app.renderPage();
+});
+
+window.addEventListener('load', () => {
+	app.renderPage();
+});
