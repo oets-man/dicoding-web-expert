@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source';
-import API_ENDPOINT from '../../globals/api-endpoint';
+import API_ENDPOINT from '../../global/api-endpoint';
 import '../components/my-card';
 
 const Home = {

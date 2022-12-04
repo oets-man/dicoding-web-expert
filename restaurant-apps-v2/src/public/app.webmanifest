@@ -5,8 +5,8 @@
   "short_name": "Restaurant Review",
   "description": "Review Restaurant Nusantara",
   "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#D84315",
+  "background_color": "#f0ffff",
+  "theme_color": "#464e2e",
   "icons": [
     {
       "src": "./icons/windows11/SmallTile.scale-100.png",

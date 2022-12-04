@@ -1,5 +1,5 @@
 import axios from 'axios';
-import API_ENDPOINT from '../globals/api-endpoint';
+import API_ENDPOINT from '../global/api-endpoint';
 
 class RestaurantSource {
 	static getAll = async () => {
