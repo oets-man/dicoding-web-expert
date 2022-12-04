@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source';
-import CONFIG from '../../globals/config';
+import API_ENDPOINT from '../../globals/api-endpoint';
 import '../components/my-card';
 
 const Home = {
@@ -14,16 +14,17 @@ const Home = {
 		const cardContainer = document.querySelector('#card-container');
 		try {
 			const { restaurants } = await RestaurantSource.getAll();
+			if (!restaurants) return;
 			for (const [index, restaurant] of restaurants.entries()) {
 				setTimeout(() => {
-					restaurant.picture = `${CONFIG.BASE_IMAGE_URL_SMALL}/${restaurant.pictureId}`;
+					restaurant.picture = `${API_ENDPOINT.IMAGE_SMALL}/${restaurant.pictureId}`;
 					const myCard = document.createElement('my-card');
 					myCard.item = restaurant;
 					cardContainer.appendChild(myCard);
 				}, 250 * index);
 			}
 		} catch (error) {
-			alert(error);
+			cardContainer.innerHTML = `<p>${error}</p>`;
 		}
 	},
 };

@@ -3,7 +3,6 @@ import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantSource {
 	static getAll = async () => {
-		console.log(API_ENDPOINT.LIST);
 		try {
 			const get = await axios.get(API_ENDPOINT.LIST);
 			const response = get.data;
