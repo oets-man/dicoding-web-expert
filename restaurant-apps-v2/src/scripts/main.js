@@ -1,5 +1,5 @@
-import '../component/my-card';
-import { DataSource } from './data-source';
+import './views/components/my-card';
+import { DataSource } from './data/data-source';
 
 const main = () => {
 	const cardContainer = document.querySelector('#card-container');
