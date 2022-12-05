@@ -1,3 +1,6 @@
+import FavoriteRestaurantIdb from '../../data/restaurant-idb';
+import API_ENDPOINT from '../../global/api-endpoint';
+
 const Favorite = {
 	async render() {
 		return `
@@ -7,7 +10,17 @@ const Favorite = {
 	},
 
 	async afterRender() {
-		// Fungsi ini akan dipanggil setelah render()
+		const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+		const cardContainer = document.querySelector('#card-container');
+
+		for (const [index, restaurant] of restaurants.entries()) {
+			setTimeout(() => {
+				restaurant.picture = `${API_ENDPOINT.IMAGE_SMALL}/${restaurant.pictureId}`;
+				const myCard = document.createElement('my-card');
+				myCard.item = restaurant;
+				cardContainer.appendChild(myCard);
+			}, 250 * index);
+		}
 	},
 };
 

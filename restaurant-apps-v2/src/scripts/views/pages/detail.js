@@ -1,7 +1,8 @@
 import RestaurantSource from '../../data/restaurant-source';
 import UrlParser from '../../routes/url-parser';
 import API_ENDPOINT from '../../global/api-endpoint';
-import { createLikeButtonTemplate } from './template-creator';
+// import { createLikeButtonTemplate } from './template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
 	async render() {
@@ -24,22 +25,23 @@ const Detail = {
 		detailContainer.innerHTML = `
 			<div class="img-container">
 				<img src="${API_ENDPOINT.IMAGE_MEDIUM}/${restaurant.pictureId}" alt="gambar restoran">
-				<p class="rating">⭐️${parseFloat(restaurant.rating).toFixed(1)}</p>
+				<p class="rating">⭐️ ${parseFloat(restaurant.rating).toFixed(1)}</p>
 			</div>
 			<div class="detail">
 				<h3>${restaurant.name}</h3>
 				<p class="address">${restaurant.address} ${restaurant.city.toUpperCase()}</p>
 				<p class="categories">Masakan ${categoriesJoin}</p>
 				<h4>Makanan</h4>
-				<p class="menus">[${foodsJoin}]</p>
+				<p class="menus">${foodsJoin}</p>
 				<h4>Minuman</h4>
-				<p class="menus">[${drinksJoin}]</p>
+				<p class="menus">${drinksJoin}</p>
 				<p class="description">${restaurant.description}</p>
 			</div>
 			<div id="likeButtonContainer"></div>
 		`;
 		const likeButtonContainer = document.querySelector('#likeButtonContainer');
-		likeButtonContainer.innerHTML = createLikeButtonTemplate();
+		// likeButtonContainer.innerHTML = createLikeButtonTemplate();
+		LikeButtonInitiator.init({ likeButtonContainer, restaurant });
 	},
 };
 

@@ -34,7 +34,7 @@ class MyCard extends HTMLElement {
           </table>
         </div>
         <div id="description" class="description">
-          <div class="btn">
+          <div class="btn" style="display='none';">
 			<a href="/#/detail/${id}">Detail</a>
             <button id="btn-detail" aria-label="tampilkan detail restoran">Detail</button>
             <button id="btn-favorite" aria-label="tambahkan ke favorit">Favorit</button>
