@@ -213,27 +213,108 @@ main {
 		font-size: 1.5em;
 		margin-bottom: 5px;
 	}
-
-	.container {
-		display: grid;
-		grid-template-columns: 1fr;
-		justify-content: center;
-		my-card {
-			justify-self: center;
-			text-align: center;
+}
+.card-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	my-card {
+		justify-self: center;
+		text-align: center;
+		width: 100%;
+		max-width: 500px;
+	}
+	@media screen and (min-width: $tablet) {
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-evenly;
+		width: 95%;
+		margin: auto;
+	}
+	@media screen and (min-width: $laptop) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+.detail-container {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	.img-container {
+		position: relative;
+		height: 300px;
+		img {
 			width: 100%;
-			max-width: 500px;
+			height: 100%;
+			object-fit: cover;
 		}
-		@media screen and (min-width: $tablet) {
-			grid-template-columns: 1fr 1fr;
-			justify-content: space-evenly;
-			width: 95%;
-			margin: auto;
-		}
-		@media screen and (min-width: $laptop) {
-			grid-template-columns: 1fr 1fr 1fr;
+		.rating {
+			position: absolute;
+			top: 250px;
+			color: $light1;
+			background-color: $dark1;
+			padding: 5px 20px 5px 10px;
+			border: 1px solid $light3;
+			border-left: none;
 		}
 	}
+	.detail {
+		text-align: center;
+		* {
+			padding: 2px 20px;
+		}
+		h3 {
+			font-size: 1.8em;
+			font-weight: 500;
+			margin-top: 15px;
+		}
+		h4 {
+			font-size: 1.3em;
+			font-weight: 400;
+			margin-top: 15px;
+		}
+		p {
+			padding: 0 20px;
+		}
+		.menus {
+			font-weight: 300;
+		}
+		.description {
+			margin-top: 15px;
+			margin-bottom: 20px;
+			text-align: justify;
+			color: $dark2;
+		}
+	}
+	.like {
+		width: 55px;
+		height: 55px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $light2;
+
+		position: fixed;
+		bottom: 16px;
+		right: 16px;
+		border-radius: 50%;
+		border: 2px solid $light3;
+
+		font-size: 18px;
+		color: $dark1;
+		cursor: pointer;
+	}
+	.like:hover {
+		box-shadow: 2px 2px 2px $dark2;
+	}
+	// @media screen and (min-width: $tablet) {
+	// 	grid-template-columns: 1fr 1fr;
+	// 	justify-content: space-evenly;
+	// 	width: 95%;
+	// 	margin: auto;
+	// }
+	// @media screen and (min-width: $laptop) {
+	// 	grid-template-columns: 1fr 1fr 1fr;
+	// }
 }
 
 footer {

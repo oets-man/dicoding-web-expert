@@ -6,7 +6,7 @@ const Home = {
 	async render() {
 		return `
         <h2>Daftar Restoran Indonesia</h2>
-        <div class="container" id="card-container"></div>
+        <div class="card-container" id="card-container"></div>
       `;
 	},
 
