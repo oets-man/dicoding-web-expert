@@ -30,7 +30,7 @@ module.exports = {
 			{
 				// component
 				test: /\.css$/i,
-				include: /component/,
+				include: [/component/, /pages/],
 				use: ['to-string-loader', 'css-loader'],
 			},
 		],

@@ -13,7 +13,7 @@ const Home = {
 	async afterRender() {
 		const cardContainer = document.querySelector('#card-container');
 		try {
-			const { restaurants } = await RestaurantSource.getAll();
+			const restaurants = await RestaurantSource.getAll();
 			if (!restaurants) return;
 			for (const [index, restaurant] of restaurants.entries()) {
 				setTimeout(() => {

@@ -35,6 +35,7 @@ class MyCard extends HTMLElement {
         </div>
         <div id="description" class="description">
           <div class="btn">
+			<a href="/#/detail/${id}">Detail</a>
             <button id="btn-detail" aria-label="tampilkan detail restoran">Detail</button>
             <button id="btn-favorite" aria-label="tambahkan ke favorit">Favorit</button>
           </div>
