@@ -36,6 +36,20 @@ const createMovieItemTemplate = (movie) => `
   </div>
 `;
 
+const createReviewForm = (id) => `
+  <h4>Tulis Komentarmu!</h4>
+  <form id="form-review">
+    <input type="hidden" name="id" value="${id}">
+    <label for="name">Nama:</label>
+    <input type="text" required name="name" id="name" />
+
+    <label for="review">Komentar:</label>
+    <input type="text" required name="review" id="review" />
+
+    <button type="submit">Kirim</button>
+  </form>
+`;
+
 const createLikeButtonTemplate = () => `
   <button aria-label="Favoritkan restoran ini" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -48,4 +62,4 @@ const createLikedButtonTemplate = () => `
   </button>
   `;
 
-export { createMovieItemTemplate, createMovieDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+export { createMovieItemTemplate, createMovieDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate, createReviewForm };

@@ -23,6 +23,25 @@ class RestaurantSource {
 			return 'Cek koneksi internet Anda! \n' + error;
 		}
 	};
+
+	static addReview = async (data) => {
+		const config = {
+			method: 'post',
+			url: API_ENDPOINT.REVIEW,
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			// data: JSON.stringify(data),
+			data: data,
+		};
+
+		try {
+			const review = await axios(config);
+			return review.data;
+		} catch (error) {
+			return 'Review gagal dikirim! \n' + error;
+		}
+	};
 }
 
 export default RestaurantSource;

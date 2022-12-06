@@ -248,8 +248,9 @@ main {
 			object-fit: cover;
 		}
 		.rating {
+			font-size: 1.4em;
 			position: absolute;
-			top: 250px;
+			bottom: 15px;
 			color: $light1;
 			background-color: $dark1;
 			padding: 5px 20px 5px 10px;
@@ -259,9 +260,6 @@ main {
 		@media screen and (min-width: $tablet) {
 			& {
 				height: 500px;
-			}
-			.rating {
-				top: 450px;
 			}
 		}
 	}
@@ -306,7 +304,6 @@ main {
 		}
 		.description {
 			padding: 0px 20px;
-			margin: 20px 0;
 
 			text-align: justify;
 			color: $dark2;
@@ -328,11 +325,13 @@ main {
 				}
 				.description {
 					grid-area: description;
+					margin: 20px 0;
 				}
 			}
 		}
 	}
 	.like {
+		z-index: 999;
 		width: 55px;
 		height: 55px;
 		display: flex;
@@ -351,6 +350,7 @@ main {
 		cursor: pointer;
 	}
 	.like:hover {
+		background-color: $light1;
 		box-shadow: 2px 2px 2px $dark2;
 	}
 	@media screen and (min-width: $laptop) {
@@ -359,7 +359,35 @@ main {
 		}
 	}
 }
-
+.reviews-container {
+	padding: 20px;
+	h4 {
+		font-size: 1.8em;
+		text-align: center;
+		font-weight: 400;
+		padding: 10px 0;
+		border-top: 1px solid $dark1;
+		border-bottom: 1px solid $dark1;
+		margin-bottom: 20px;
+	}
+}
+.reviews {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	align-items: center;
+	gap: 20px;
+	@media screen and (min-width: $tablet) {
+		grid-template-columns: 1fr 1fr;
+		align-items: flex-start;
+	}
+	@media screen and (min-width: $laptop) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	review-card {
+		width: 100%;
+	}
+}
 footer {
 	background-color: $light2;
 	text-align: center;

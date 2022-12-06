@@ -6,7 +6,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'src/scripts/index.js'),
-		// sw: path.resolve(__dirname, 'src/scripts/sw-native.js'),
 	},
 	output: {
 		filename: '[name].bundle.js',
