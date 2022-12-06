@@ -234,8 +234,8 @@ main {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
+
 .detail-container {
-	margin-top: 10px;
 	display: grid;
 	grid-template-columns: 1fr;
 	justify-content: center;
@@ -256,40 +256,80 @@ main {
 			border: 1px solid $light3;
 			border-left: none;
 		}
-	}
-	.detail {
-		text-align: center;
-		* {
-			padding: 2px 20px;
-		}
-		h3 {
-			font-size: 1.8em;
-			font-weight: 500;
-			margin-top: 15px;
-		}
-		h4 {
-			font-size: 1.3em;
-			font-weight: 400;
-			margin-top: 15px;
-		}
-		p {
-			padding: 0 20px;
-		}
-		.menus {
-			font-weight: 300;
-			&::before {
-				content: '[';
+		@media screen and (min-width: $tablet) {
+			& {
+				height: 500px;
 			}
-			&::after {
-				content: ']';
+			.rating {
+				top: 450px;
+			}
+		}
+	}
+	.content {
+		text-align: center;
+		display: grid;
+		margin: auto;
+		max-width: 450px;
+		p {
+			font-size: 1.2em;
+			line-height: 1.6;
+		}
+		.header {
+			padding: 0px 20px;
+			margin: 20px 0;
+			h3 {
+				font-size: 1.8em;
+				font-weight: 500;
+			}
+		}
+
+		.menus {
+			padding: 0px 20px;
+			margin: 20px 0;
+			.drinks,
+			.foods {
+				font-weight: 300;
+				h4 {
+					font-size: 1.3em;
+					font-weight: 400;
+				}
+				p {
+					margin-bottom: 20px;
+				}
+				p::before {
+					content: '[';
+				}
+				p::after {
+					content: ']';
+				}
 			}
 		}
 		.description {
-			padding-top: 15px;
-			padding-bottom: 20px;
+			padding: 0px 20px;
+			margin: 20px 0;
+
 			text-align: justify;
 			color: $dark2;
 			font-weight: 100;
+		}
+		@media screen and (min-width: $tablet) {
+			& {
+				max-width: 1000px;
+				grid-template-areas:
+					'header header'
+					'menus description'
+					'menus description';
+				.header {
+					grid-area: header;
+				}
+				.menus {
+					text-align: justify;
+					grid-area: menus;
+				}
+				.description {
+					grid-area: description;
+				}
+			}
 		}
 	}
 	.like {
@@ -313,15 +353,11 @@ main {
 	.like:hover {
 		box-shadow: 2px 2px 2px $dark2;
 	}
-	// @media screen and (min-width: $tablet) {
-	// 	grid-template-columns: 1fr 1fr;
-	// 	justify-content: space-evenly;
-	// 	width: 95%;
-	// 	margin: auto;
-	// }
-	// @media screen and (min-width: $laptop) {
-	// 	grid-template-columns: 1fr 1fr 1fr;
-	// }
+	@media screen and (min-width: $laptop) {
+		.like {
+			position: absolute;
+		}
+	}
 }
 
 footer {

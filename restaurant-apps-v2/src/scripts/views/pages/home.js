@@ -26,6 +26,7 @@ const Home = {
 		} catch (error) {
 			cardContainer.innerHTML = `<p>${error}</p>`;
 		}
+		document.querySelector('#hero').style.display = '';
 	},
 };
 
