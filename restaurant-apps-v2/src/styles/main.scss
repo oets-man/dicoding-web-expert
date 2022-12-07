@@ -388,6 +388,46 @@ main {
 		width: 100%;
 	}
 }
+
+.post-reviews {
+	h4 {
+		font-size: 1.8em;
+		text-align: center;
+		font-weight: 400;
+		padding: 10px 0;
+		border-top: 1px solid $dark1;
+		border-bottom: 1px solid $dark1;
+		margin-bottom: 20px;
+	}
+	form {
+		max-width: 600px;
+		margin: auto;
+		padding: 20px;
+		padding-top: 0;
+		* {
+			display: block;
+			width: 100%;
+		}
+		label {
+			color: $dark2;
+			font-weight: 100;
+			margin: 5px 0;
+		}
+		input {
+			line-height: 1.6;
+			margin-bottom: 20px;
+			margin-top: 5px;
+			color: $dark2;
+		}
+		button {
+			height: 44px;
+			color: $dark1;
+			background-color: $light2;
+			border-color: $light3;
+			border-radius: 5px;
+		}
+	}
+}
 footer {
 	background-color: $light2;
 	text-align: center;

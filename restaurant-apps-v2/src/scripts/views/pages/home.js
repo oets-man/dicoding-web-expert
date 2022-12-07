@@ -1,4 +1,4 @@
-import RestaurantSource from '../../data/restaurant-source';
+import RestaurantApi from '../../data/restaurant-api';
 import API_ENDPOINT from '../../global/api-endpoint';
 import '../components/my-card';
 
@@ -13,7 +13,7 @@ const Home = {
 	async afterRender() {
 		const cardContainer = document.querySelector('#card-container');
 		try {
-			const restaurants = await RestaurantSource.getAll();
+			const restaurants = await RestaurantApi.getAll();
 			if (!restaurants) return;
 			for (const [index, restaurant] of restaurants.entries()) {
 				setTimeout(() => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import API_ENDPOINT from '../global/api-endpoint';
 
-class RestaurantSource {
+class RestaurantApi {
 	static getAll = async () => {
 		try {
 			const get = await axios.get(API_ENDPOINT.LIST);
@@ -31,7 +31,6 @@ class RestaurantSource {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			// data: JSON.stringify(data),
 			data: data,
 		};
 
@@ -44,4 +43,4 @@ class RestaurantSource {
 	};
 }
 
-export default RestaurantSource;
+export default RestaurantApi;
