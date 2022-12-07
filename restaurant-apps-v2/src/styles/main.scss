@@ -362,7 +362,7 @@ main {
 .reviews-container {
 	padding: 20px;
 	h4 {
-		font-size: 1.8em;
+		font-size: 1.4em;
 		text-align: center;
 		font-weight: 400;
 		padding: 10px 0;
@@ -389,9 +389,9 @@ main {
 	}
 }
 
-.post-reviews {
+.form-review-container {
 	h4 {
-		font-size: 1.8em;
+		font-size: 1.4em;
 		text-align: center;
 		font-weight: 400;
 		padding: 10px 0;
@@ -413,18 +413,35 @@ main {
 			font-weight: 100;
 			margin: 5px 0;
 		}
-		input {
+		input,
+		textarea {
 			line-height: 1.6;
 			margin-bottom: 20px;
 			margin-top: 5px;
 			color: $dark2;
-		}
-		button {
-			height: 44px;
-			color: $dark1;
-			background-color: $light2;
-			border-color: $light3;
+			padding: 15px;
 			border-radius: 5px;
+			border-width: 1px;
+		}
+		.buttons {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 20px;
+
+			button {
+				height: 44px;
+				color: $dark1;
+				background-color: $light2;
+				border-color: $light3;
+				border-radius: 5px;
+				border-width: 1px;
+				cursor: pointer;
+				&:hover {
+					background-color: $light1;
+					font-weight: 500;
+					box-shadow: 2px 2px 2px $dark2;
+				}
+			}
 		}
 	}
 }

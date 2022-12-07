@@ -3,6 +3,7 @@ import API_ENDPOINT from '../../global/api-endpoint';
 
 const Favorite = {
 	async render() {
+		document.querySelector('#hero').style.display = 'flex';
 		return `
         <h2>Daftar Favorite</h2>
 		<div class="card-container" id="card-container"></div>
@@ -21,7 +22,6 @@ const Favorite = {
 				cardContainer.appendChild(myCard);
 			}, 250 * index);
 		}
-		document.querySelector('#hero').style.display = '';
 	},
 };
 

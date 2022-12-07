@@ -1,8 +1,8 @@
 const CONFIG = {
 	KEY: '12345',
 	BASE_URL: 'https://restaurant-api.dicoding.dev',
-	// CACHE_NAME: 'RestaurantReview-V1',
-	CACHE_NAME: new Date().toISOString(),
+	CACHE_NAME: 'RestaurantReview-V1',
+	// CACHE_NAME: new Date().toISOString(),
 
 	// database idb
 	DATABASE_NAME: 'restaurant-review-database',

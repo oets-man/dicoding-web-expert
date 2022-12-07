@@ -7,9 +7,8 @@ import { createReviewForm } from './template-creator';
 
 const Detail = {
 	async render() {
-		return `
-        <div class="detail-container" id="detail-container"></div>
-      `;
+		document.querySelector('#hero').style.display = 'none';
+		return '<div class="detail-container" id="detail-container"></div>';
 	},
 
 	async afterRender() {
@@ -20,7 +19,6 @@ const Detail = {
 		const drinksJoin = restaurant.menus.drinks.map((drink) => [drink.name].join(' ')).join('; ');
 		const foodsJoin = restaurant.menus.foods.map((food) => [food.name].join(' ')).join('; ');
 		const { customerReviews } = restaurant;
-		// console.log(restaurant);
 		detailContainer.innerHTML = `
 			<div class="img-container">
 				<img src="${API_ENDPOINT.IMAGE_MEDIUM}/${restaurant.pictureId}" alt="gambar restoran">
@@ -49,19 +47,19 @@ const Detail = {
 				<h4>Apa Kata Mereka</h4>
 				<div class="reviews" id="reviews"></div>
 			</div>
-			<div class="post-reviews" id="post-reviews"></div>
+			<div class="form-review-container" id="form-review-container"></div>
 		`;
-		const reviews = document.querySelector('#reviews');
+
 		customerReviews.forEach((review) => {
 			const card = document.createElement('review-card');
 			card.item = review;
-			reviews.appendChild(card);
+			document.querySelector('#reviews').appendChild(card);
 		});
 
-		document.querySelector('#post-reviews').innerHTML = createReviewForm(restaurant.id);
+		document.querySelector('#form-review-container').innerHTML = createReviewForm(restaurant.id);
+
 		const likeButtonContainer = document.querySelector('#likeButtonContainer');
 		LikeButtonInitiator.init({ likeButtonContainer, restaurant });
-		document.querySelector('#hero').style.display = 'none';
 
 		this.handleClickReview(document.querySelector('#form-review'));
 	},
@@ -75,9 +73,9 @@ const Detail = {
 				const { customerReviews } = post;
 				const reviews = document.querySelector('#reviews');
 				customerReviews.forEach((review) => {
-					const card = document.createElement('review-card');
-					card.item = review;
-					reviews.appendChild(card);
+					const reviewCard = document.createElement('review-card');
+					reviewCard.item = review;
+					reviews.appendChild(reviewCard);
 				});
 				form.reset();
 				alert('Terima kasih telah memberikan komentar.');

@@ -4,6 +4,7 @@ import '../components/my-card';
 
 const Home = {
 	async render() {
+		document.querySelector('#hero').style.display = 'flex';
 		return `
         <h2>Daftar Restoran Indonesia</h2>
         <div class="card-container" id="card-container"></div>
@@ -26,7 +27,6 @@ const Home = {
 		} catch (error) {
 			cardContainer.innerHTML = `<p>${error}</p>`;
 		}
-		document.querySelector('#hero').style.display = '';
 	},
 };
 
