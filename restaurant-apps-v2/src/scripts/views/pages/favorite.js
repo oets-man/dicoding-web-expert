@@ -15,7 +15,7 @@ const Favorite = {
 		const cardContainer = document.querySelector('#card-container');
 		if (restaurants.length == 0) {
 			cardContainer.style.display = 'block';
-			cardContainer.innerHTML = '<p class="error" role="error">Tidak ada data untuk ditampilkan. Silakan favoritkan beberapa restoran!</p>';
+			cardContainer.innerHTML = '<p class="error" role="alert">Tidak ada data untuk ditampilkan. Silakan favoritkan beberapa restoran!</p>';
 			return;
 		}
 

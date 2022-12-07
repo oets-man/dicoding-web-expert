@@ -64,7 +64,7 @@ const Detail = {
 
 			this.handleClickReview(document.querySelector('#form-review'));
 		} catch (error) {
-			detailContainer.innerHTML = '<p class="error" role="error">Data gagal ditampilkan. Cek koneksi internet Anda!</p>';
+			detailContainer.innerHTML = '<p class="error" role="alert">Data gagal ditampilkan. Cek koneksi internet Anda!</p>';
 			console.log(error);
 		}
 	},

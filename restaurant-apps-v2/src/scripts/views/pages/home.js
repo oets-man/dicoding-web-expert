@@ -26,7 +26,7 @@ const Home = {
 			}
 		} catch (error) {
 			cardContainer.style.display = 'block';
-			cardContainer.innerHTML = '<p class="error" role="error">Data gagal ditampilkan. Cek koneksi internet Anda!</p>';
+			cardContainer.innerHTML = '<p class="error" role="alert">Data gagal ditampilkan. Cek koneksi internet Anda!</p>';
 			console.log(error);
 		}
 	},
