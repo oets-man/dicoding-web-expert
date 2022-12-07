@@ -14,12 +14,13 @@ const Detail = {
 	async afterRender() {
 		const detailContainer = document.querySelector('#detail-container');
 		const url = UrlParser.parseActiveUrlWithoutCombiner();
-		const restaurant = await RestaurantApi.detailRestaurant(url.id);
-		const categoriesJoin = restaurant.categories.map((category) => [category.name].join(' ')).join('; ');
-		const drinksJoin = restaurant.menus.drinks.map((drink) => [drink.name].join(' ')).join('; ');
-		const foodsJoin = restaurant.menus.foods.map((food) => [food.name].join(' ')).join('; ');
-		const { customerReviews } = restaurant;
-		detailContainer.innerHTML = `
+		try {
+			const restaurant = await RestaurantApi.detailRestaurant(url.id);
+			const categoriesJoin = restaurant.categories.map((category) => [category.name].join(' ')).join('; ');
+			const drinksJoin = restaurant.menus.drinks.map((drink) => [drink.name].join(' ')).join('; ');
+			const foodsJoin = restaurant.menus.foods.map((food) => [food.name].join(' ')).join('; ');
+			const { customerReviews } = restaurant;
+			detailContainer.innerHTML = `
 			<div class="img-container">
 				<img src="${API_ENDPOINT.IMAGE_MEDIUM}/${restaurant.pictureId}" alt="gambar restoran">
 				<p class="rating">⭐️ ${parseFloat(restaurant.rating).toFixed(1)}</p>
@@ -50,18 +51,22 @@ const Detail = {
 			<div class="form-review-container" id="form-review-container"></div>
 		`;
 
-		customerReviews.forEach((review) => {
-			const card = document.createElement('review-card');
-			card.item = review;
-			document.querySelector('#reviews').appendChild(card);
-		});
+			customerReviews.forEach((review) => {
+				const card = document.createElement('review-card');
+				card.item = review;
+				document.querySelector('#reviews').appendChild(card);
+			});
 
-		document.querySelector('#form-review-container').innerHTML = createReviewForm(restaurant.id);
+			document.querySelector('#form-review-container').innerHTML = createReviewForm(restaurant.id);
 
-		const likeButtonContainer = document.querySelector('#likeButtonContainer');
-		LikeButtonInitiator.init({ likeButtonContainer, restaurant });
+			const likeButtonContainer = document.querySelector('#likeButtonContainer');
+			LikeButtonInitiator.init({ likeButtonContainer, restaurant });
 
-		this.handleClickReview(document.querySelector('#form-review'));
+			this.handleClickReview(document.querySelector('#form-review'));
+		} catch (error) {
+			detailContainer.innerHTML = '<p class="error" role="error">Data gagal ditampilkan. Cek koneksi internet Anda!</p>';
+			console.log(error);
+		}
 	},
 
 	handleClickReview(form) {

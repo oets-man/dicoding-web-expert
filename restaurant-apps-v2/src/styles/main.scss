@@ -348,17 +348,25 @@ main {
 		font-size: 18px;
 		color: $dark1;
 		cursor: pointer;
-	}
-	.like:hover {
-		background-color: $light1;
-		box-shadow: 2px 2px 2px $dark2;
-	}
-	@media screen and (min-width: $laptop) {
-		.like {
-			position: absolute;
+		svg {
+			width: 25px;
+			fill: $dark1;
+			&:hover {
+				fill: $dark2;
+			}
+		}
+		&:hover {
+			background-color: $light1;
+			box-shadow: 2px 2px 2px $dark2;
+		}
+		@media screen and (min-width: $laptop) {
+			& {
+				position: absolute;
+			}
 		}
 	}
 }
+
 .reviews-container {
 	padding: 20px;
 	h4 {
@@ -452,4 +460,11 @@ footer {
 	height: 30px;
 	line-height: 30px;
 	font-size: small;
+}
+.error {
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.2em;
+	line-height: 1.6;
+	padding: 20px;
 }

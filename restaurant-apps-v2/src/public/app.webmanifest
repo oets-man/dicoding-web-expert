@@ -2,7 +2,7 @@
   "id": "restaurant-review-pwa-1",
   "start_url": "./index.html",
   "name": "Restaurant Review",
-  "short_name": "Restaurant Review",
+  "short_name": "Restaurant",
   "description": "Review Restaurant Nusantara",
   "display": "standalone",
   "background_color": "#d7e0c3",
