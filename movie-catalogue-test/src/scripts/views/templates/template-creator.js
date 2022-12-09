@@ -48,4 +48,10 @@ const createUnlikeMovieButtonTemplate = () => `
   </button>
 `;
 
-export { createMovieItemTemplate, createMovieDetailTemplate, createLikeMovieButtonTemplate, createUnlikeMovieButtonTemplate };
+export {
+	// eslint-disable-next-line max-len
+	createMovieItemTemplate,
+	createMovieDetailTemplate,
+	createLikeMovieButtonTemplate,
+	createUnlikeMovieButtonTemplate,
+};

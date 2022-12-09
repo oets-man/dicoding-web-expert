@@ -19,10 +19,9 @@
     "no-underscore-dangle": 0,
     "no-restricted-globals": 0,
     "linebreak-style": 0,
-
     "no-tabs":0,
-    "indent": ["error", "tab"],
-    "code": 120
+    // "code": 120,
+    "indent": ["error", "tab"]
   },
   "plugins": [
     "jasmine"

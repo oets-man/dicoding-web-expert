@@ -9,4 +9,5 @@ const createLikeButtonPresenterWithMovie = async (movie) => {
 	});
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { createLikeButtonPresenterWithMovie };
