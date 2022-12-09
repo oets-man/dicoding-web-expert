@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true,
+    "jasmine": true
+  },
+  "ignorePatterns": ["/dist/*.js","karma.conf.js", "webpack*.js", "/specs/*.js"],
+  "extends": [
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "no-console": 0,
+    "no-underscore-dangle": 0,
+    "no-restricted-globals": 0,
+    "linebreak-style": 0,
+
+    "no-tabs":0,
+    "indent": ["error", "tab"],
+    "code": 120
+  },
+  "plugins": [
+    "jasmine"
+  ]
+}
