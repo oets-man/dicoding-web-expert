@@ -1,4 +1,4 @@
-const createReviewForm = (id) => `
+const createFormReview = (id) => `
   <h4>Tulis Komentarmu!</h4>
   <form id="form-review">
     <input type="hidden" name="id" value="${id}">
@@ -30,4 +30,4 @@ const createLikedButtonTemplate = () => `
   </button>
   `;
 
-export { createLikeButtonTemplate, createLikedButtonTemplate, createReviewForm };
+export { createLikeButtonTemplate, createLikedButtonTemplate, createFormReview };

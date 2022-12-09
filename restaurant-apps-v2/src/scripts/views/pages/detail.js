@@ -3,7 +3,7 @@ import UrlParser from '../../routes/url-parser';
 import API_ENDPOINT from '../../global/api-endpoint';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import '../components/review-card';
-import { createReviewForm } from './template-creator';
+import { createFormReview } from './template-creator';
 
 const Detail = {
 	async render() {
@@ -57,7 +57,7 @@ const Detail = {
 				document.querySelector('#reviews').appendChild(card);
 			});
 
-			document.querySelector('#form-review-container').innerHTML = createReviewForm(restaurant.id);
+			document.querySelector('#form-review-container').innerHTML = createFormReview(restaurant.id);
 
 			const likeButtonContainer = document.querySelector('#likeButtonContainer');
 			LikeButtonInitiator.init({ likeButtonContainer, restaurant });
@@ -73,17 +73,22 @@ const Detail = {
 		form.addEventListener('submit', async (e) => {
 			e.preventDefault();
 			const data = new FormData(form);
-			const post = await RestaurantApi.addReview(data);
-			if (!post.error) {
-				const { customerReviews } = post;
-				const reviews = document.querySelector('#reviews');
-				customerReviews.forEach((review) => {
-					const reviewCard = document.createElement('review-card');
-					reviewCard.item = review;
-					reviews.appendChild(reviewCard);
-				});
-				form.reset();
-				alert('Terima kasih telah memberikan komentar.');
+			try {
+				const post = await RestaurantApi.addReview(data);
+				if (!post.error) {
+					const { customerReviews } = post;
+					const reviews = document.querySelector('#reviews');
+					customerReviews.forEach((review) => {
+						const reviewCard = document.createElement('review-card');
+						reviewCard.item = review;
+						reviews.appendChild(reviewCard);
+					});
+					form.reset();
+					alert('Terima kasih telah memberikan komentar.');
+				}
+			} catch (error) {
+				alert('Review gagal dikirim. Cek koneksi internet Anda!');
+				console.log(error);
 			}
 		});
 	},
