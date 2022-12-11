@@ -43,7 +43,7 @@ class FavoriteMovieSearchPresenter {
 		// document.querySelector('.movies').innerHTML = html;
 		// document.getElementById('movie-search-container')
 		// .dispatchEvent(new Event('movies:searched:updated'));
-		this._view.showMovies(movies);
+		this._view.showFavoriteMovies(movies);
 	}
 
 	get latestQuery() {
