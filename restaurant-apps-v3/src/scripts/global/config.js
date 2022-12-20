@@ -1,0 +1,12 @@
+const CONFIG = {
+	BASE_URL: 'https://restaurant-api.dicoding.dev',
+	CACHE_NAME: 'RestaurantReview-V1',
+	// CACHE_NAME: new Date().toISOString(),
+
+	// database idb
+	DATABASE_NAME: 'restaurant-review-database',
+	DATABASE_VERSION: 1,
+	OBJECT_STORE_NAME: 'restaurants',
+};
+
+export default CONFIG;

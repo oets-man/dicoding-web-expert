@@ -1,0 +1,10 @@
+•	Menuliskan test case secara lengkap, mulai dari kasus positif hingga kasus negatif. Pastikan test case yang dijalankan berhasil.
+•	Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. Pastikan test case yang dijalankan berhasil.
+Contoh: bila aplikasi terdapat fitur customer review, lakukan End to End test pada fitur tersebut.
+•	Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.
+•	Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan metrik Web Vitals dengan nilai:
+o	FCP < 2.5 detik
+o	FID/TBT < 100 ms
+o	CLS < 0.1
+Note: Lampirkan URL dari laman web yang sudah di hosting pada Student Notes.  
+
