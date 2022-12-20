@@ -1,10 +1,9 @@
 import RestaurantApi from '../../data/restaurant-api';
 import UrlParser from '../../routes/url-parser';
 import API_ENDPOINT from '../../global/api-endpoint';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import '../components/review-card';
 import { createFormReview } from './template-creator';
-
 const Detail = {
 	async render() {
 		document.querySelector('#hero').style.display = 'none';
@@ -60,7 +59,7 @@ const Detail = {
 			document.querySelector('#form-review-container').innerHTML = createFormReview(restaurant.id);
 
 			const likeButtonContainer = document.querySelector('#likeButtonContainer');
-			LikeButtonInitiator.init({ likeButtonContainer, restaurant });
+			LikeButtonPresenter.init({ likeButtonContainer, restaurant });
 
 			this.handleClickReview(document.querySelector('#form-review'));
 		} catch (error) {
