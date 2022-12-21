@@ -22,7 +22,7 @@ const Home = {
 					const myCard = document.createElement('my-card');
 					myCard.item = restaurant;
 					cardContainer.appendChild(myCard);
-				}, 250 * index);
+				}, 1 * index); // ganti ke * 1 => gagal di test e2e
 			}
 		} catch (error) {
 			cardContainer.style.display = 'block';
