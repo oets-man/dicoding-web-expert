@@ -2,16 +2,16 @@ const { async } = require('regenerator-runtime');
 const assert = require('assert');
 Feature('Liking Restaurant');
 
-Before(({ I }) => {
-	I.amOnPage('./#/favorite');
-});
-
 Scenario('liking one restaurant', async ({ I }) => {
+	// --------------------------------
+	// #Favorite: pastikan data kosong
+	// --------------------------------
+	I.amOnPage('./#/favorite');
 	I.waitForElement('.error', 10); // secs
 	I.see('Tidak ada data untuk ditampilkan. Silakan favoritkan beberapa restoran!', '.error');
 
 	// --------------------------------
-	// Home
+	// #Home: klik detail
 	// --------------------------------
 	I.amOnPage('./');
 	I.waitForElement('my-card', 30);
@@ -22,7 +22,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 	I.click('pierce/.detail');
 
 	// --------------------------------
-	// Detail - favorite
+	// #Detail: klik favorite
 	// --------------------------------
 	I.waitForElement('h3', 10);
 	const nameInDetail_fromHome = await I.grabTextFrom('h3');
@@ -36,7 +36,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 	I.click(locate('button').withAttr({ 'aria-label': 'Favoritkan restoran ini' }));
 
 	// --------------------------------
-	// Favorite
+	// #Favorite: cek
 	// --------------------------------
 	I.amOnPage('./#/favorite');
 	I.waitForElement('my-card', 30);
@@ -47,7 +47,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 	I.click('pierce/.detail');
 
 	// --------------------------------
-	// Detail - unFavorite
+	// #Detail: klik unFavorite
 	// --------------------------------
 	I.waitForElement('h3', 10);
 	const nameInDetail_fromFavorite = await I.grabTextFrom('h3');
@@ -55,7 +55,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 	I.click(locate('button').withAttr({ 'aria-label': 'Hapus dari daftar favorit' }));
 
 	// --------------------------------
-	// Favorite
+	// #Favorite: pastikan data kosong
 	// --------------------------------
 	I.amOnPage('./#/favorite');
 	I.waitForElement('.error', 10); // secs
