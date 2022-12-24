@@ -27,7 +27,17 @@
 				</nav>
 			</section>
 			<section class="hero" id="hero">
-				<img src="./images/heros/hero-image_2.jpg" alt="gambar hero" />
+				<picture>
+					<source type="image/webp" media="(max-width: 767px)" srcset="./images/hero/hero-image-small.webp" />
+					<source type="image/webp" media="(max-width: 1023px)" srcset="./images/hero/hero-image-medium.webp" />
+					<source type="image/webp" srcset="./images/hero/hero-image-large.webp" />
+
+					<source type="image/jpeg" media="(max-width: 767px)" srcset="./images/hero/hero-image-small.jpg" />
+					<source type="image/jpeg" media="(max-width: 1023px)" srcset="./images/hero/hero-image-medium.jpg" />
+					<source type="image/jpeg" srcset="./images/hero/hero-image-large.jpg" />
+
+					<img src="./images/hero/hero-image-large.jpg" alt="gambar hero" />
+				</picture>
 				<div class="hero-content">
 					<h1 class="hero-title">Kuliner Indonesia</h1>
 					<h2 class="hero-subtitle">Rasakan Lezatnya Cita Rasa <span>Kuliner Indonesia</span></h2>

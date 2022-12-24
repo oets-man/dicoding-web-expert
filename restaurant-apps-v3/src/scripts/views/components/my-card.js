@@ -17,7 +17,7 @@ class MyCard extends HTMLElement {
 			<style>${css}</style>
 			<div class="item" tabindex="0" id="restaurantId-${id}">
 				<div class="content">
-					<img src="${picture}" alt="gambar restoran" />
+					<img loading="lazy" width="100" height="100" src="${picture}" alt="gambar restoran" />
 					<table>
 						<tr>
 							<td>nama:</td>

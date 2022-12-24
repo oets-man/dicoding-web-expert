@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -44,9 +46,32 @@ module.exports = {
 				{
 					from: path.resolve(__dirname, 'src/public/'),
 					to: path.resolve(__dirname, 'dist/'),
+					// globOptions: {
+					// 	// CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+					// 	ignore: ['**/images/hero/**'],
+					// },
 				},
 			],
 		}),
 		new CleanWebpackPlugin(),
+		new ImageminWebpWebpackPlugin({
+			config: [
+				{
+					test: /\.(jpe?g|png)/,
+					options: {
+						quality: 50,
+					},
+				},
+			],
+			overrideExtension: true,
+		}),
+		new ImageminWebpackPlugin({
+			plugins: [
+				ImageminMozjpeg({
+					quality: 50,
+					progressive: true,
+				}),
+			],
+		}),
 	],
 };
