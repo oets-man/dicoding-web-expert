@@ -7,4 +7,5 @@ o	FCP < 2.5 detik
 o	FID/TBT < 100 ms
 o	CLS < 0.1
 Note: Lampirkan URL dari laman web yang sudah di hosting pada Student Notes.  
+https://superb-concha-ff206b.netlify.app/
 

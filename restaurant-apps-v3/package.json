@@ -10,9 +10,7 @@
     "lint": "eslint --fix --ext .js --ignore-path .gitignore .",
     "serve": "http-server dist",
     "build-serve": "npm run build && npm run serve",
-    "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js",
-    "build-image-serve": "npm run build && node sharp.js && npm run serve"
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -26,6 +24,7 @@
     "codeceptjs": "^3.3.7",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -42,12 +41,15 @@
     "karma-jasmine": "^4.0.2",
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
+    "mini-css-extract-plugin": "^2.7.2",
     "puppeteer": "^19.4.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
-    "sharp": "^0.31.3",
     "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
+    "to-string-loader": "^1.2.0",
     "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
@@ -56,9 +58,6 @@
   "dependencies": {
     "axios": "^1.2.0",
     "idb": "^7.0.1",
-    "lazysizes": "^5.3.2",
-    "query-selector-shadow-dom": "^1.0.1",
-    "regenerator-runtime": "^0.13.9",
-    "to-string-loader": "^1.2.0"
+    "regenerator-runtime": "^0.13.9"
   }
 }

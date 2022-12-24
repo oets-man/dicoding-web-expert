@@ -5,6 +5,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -14,17 +19,41 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 	},
+	optimization: {
+		minimize: true,
+		minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+		splitChunks: {
+			chunks: 'all',
+			minSize: 20000,
+			maxSize: 70000,
+			minChunks: 1,
+			maxAsyncRequests: 30,
+			maxInitialRequests: 30,
+			automaticNameDelimiter: '~',
+			enforceSizeThreshold: 50000,
+			cacheGroups: {
+				defaultVendors: {
+					test: /[\\/]node_modules[\\/]/,
+					priority: -10,
+				},
+				default: {
+					minChunks: 2,
+					priority: -20,
+					reuseExistingChunk: true,
+				},
+			},
+		},
+	},
+
 	module: {
 		rules: [
 			{
 				test: /\.s[ac]ss$/i,
 				exclude: /component/,
 				use: [
-					// Creates `style` nodes from JS strings
-					'style-loader',
-					// Translates CSS into CommonJS
+					MiniCssExtractPlugin.loader,
+					// 'style-loader',
 					'css-loader',
-					// Compiles Sass to CSS
 					'sass-loader',
 				],
 			},
@@ -73,5 +102,7 @@ module.exports = {
 				}),
 			],
 		}),
+		new MiniCssExtractPlugin(),
+		new BundleAnalyzerPlugin(),
 	],
 };
