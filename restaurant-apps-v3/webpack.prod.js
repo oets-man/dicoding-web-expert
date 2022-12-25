@@ -2,13 +2,11 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
 	mode: 'production',
 	devtool: 'source-map',
-	// entry: {
-	// 	sw: path.resolve(__dirname, 'src/scripts/sw-native.js'),
-	// },
 	module: {
 		rules: [
 			{
@@ -29,5 +27,6 @@ module.exports = merge(common, {
 		new WorkboxWebpackPlugin.GenerateSW({
 			swDest: './sw.bundle.js',
 		}),
+		new BundleAnalyzerPlugin(),
 	],
 });
