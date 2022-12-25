@@ -21,7 +21,13 @@ const Detail = {
 			const { customerReviews } = restaurant;
 			detailContainer.innerHTML = `
 			<div class="img-container">
-				<img src="${API_ENDPOINT.IMAGE_MEDIUM}/${restaurant.pictureId}" alt="gambar restoran">
+				<picture>
+					<source type="image/jpeg" media="(max-width: 767px)" srcset="${API_ENDPOINT.IMAGE_SMALL}/${restaurant.pictureId}" />
+					<source type="image/jpeg" media="(max-width: 1023px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM}/${restaurant.pictureId}" />
+					<source type="image/jpeg" srcset="${API_ENDPOINT.IMAGE_LARGE}/${restaurant.pictureId}" />
+
+					<img src="${API_ENDPOINT.IMAGE_LARGE}/${restaurant.pictureId}" alt="gambar restoran">
+				</picture>
 				<p class="rating">⭐️ ${parseFloat(restaurant.rating).toFixed(1)}</p>
 				<div id="likeButtonContainer"></div>
 			</div>
